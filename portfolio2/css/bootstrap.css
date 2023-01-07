@@ -1,0 +1,55 @@
+body{
+    background-color: #f7f9fc;
+    padding:20px;
+}
+h5{
+    margin-bottom: 15px;
+}
+
+.p-text{
+    margin-bottom: 1px;
+}
+.box{
+    align-items: center;
+}
+.boxcolor{
+    background-color: white;
+    border-radius: 15px;
+}
+.btncolor{
+    background:#6fbaf8;
+    border:none;
+}
+.btnstyle{
+    border-radius: 20px;
+    padding:8px;
+}
+.iconstyle{
+    color:#6fbaf8;
+}
+.text-align{
+   text-align: center;
+}
+.pill {
+	display: inline-block;
+	border: 1px solid lightgray;
+	border-radius: 100px;
+	padding: 3px 12px 5px 12px;
+	margin-right: 2px;
+	margin-bottom: 5px;
+}
+.click{
+    margin-bottom: 10px;
+    color: rgb(192, 192, 192);
+    border-bottom: 2px solid rgb(192, 192, 192);
+}
+.click:focus{
+    color:#6fbaf8;
+    border-bottom: 2px solid #6fbaf8;
+}
+.margin-bottom{
+    margin-bottom:100px
+}
+.image-size{
+    width:100%;
+}
