@@ -1,0 +1,450 @@
+@font-face {
+    font-family: 'Manrope';
+    src: url('../static/Manrope-Regular.ttf');
+}
+
+div,
+input,
+textarea {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'gulim';
+}
+
+p,
+h4,
+h3,
+h2,
+h1,
+span {
+    transform: rotate(0.03deg)
+}
+
+.test-container i {
+    background-color: burlywood;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    padding-top: 25px;
+    box-sizing: border-box;
+    color: white;
+    margin-top: 30px;
+}
+
+html {
+    line-height: 1.15;
+}
+
+.container {
+    width: 800px;
+}
+
+
+.main-background {
+    width: 100%;
+    height: 500px;
+    background-image: url(../shoes.jpg);
+    /*,url();*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-attachment: fixed; */
+    /* filter:brightness(70%) saturate(200%) */
+    padding: 1px;
+}
+
+.main-title {
+    color: white;
+    font-size: 40px;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.main-content {
+    color: white;
+    text-align: center;
+}
+
+.main-button {
+
+    padding: 15px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 150px;
+    /* z-index: 5; */
+}
+
+.explain-box {
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 5px;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: -40px;
+    margin: auto;
+
+    /* z-index:0; */
+}
+
+/* .text-input{ */
+/* input[type=text]{
+    padding:10px;
+    font-size:20px;
+    border:2px solid black;
+    border-radius:5px;
+} */
+
+.form-background {
+    background-color: rgb(71, 71, 71);
+    padding: 30px;
+}
+
+.form-white {
+    background-color: white;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid rgb(104, 104, 104);
+    border-radius: 5px;
+
+}
+
+.form-long {
+    height: 100px;
+}
+
+.w-50 {
+    width: 50%;
+    float: left;
+    padding: 10px;
+
+}
+
+.w-100 {
+    padding: 10px;
+    width: 100%;
+}
+
+.yellow-button {
+    padding: 10px;
+    width: 30%;
+    display: block;
+    /* margin-left:auto; */
+    float: right;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+td,
+th {
+    /* border:1px solid black; */
+    padding: 10px;
+}
+
+table {
+    /* border-collapse:collapse;  */
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+/* img {
+    width: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+    float: left;
+} */
+
+strong {
+    color: black;
+    margin: auto;
+}
+
+
+.flex-item {
+    width: 100px;
+    color: white;
+    margin-right: 10px;
+}
+
+.flex-container {
+    display: flex;
+    padding: 10px;
+    height: 40px;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* flex-direction: column; */
+    /* flex-wrap:wrap; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* height: 500px; */
+    background-color: rgb(253, 120, 131);
+}
+
+.test-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: grey;
+}
+
+.test-container div {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.test-container div:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.shop-bg {
+    background-color: #eee;
+    padding: 20px;
+}
+
+.shop-container {
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.shop-item {
+    width: 33.3%;
+    padding: 15px;
+}
+
+.shop-item img {
+    width: 100%;
+    display: block;
+}
+
+.shop-font {
+    font-size: 30px;
+    color: white;
+}
+
+.overlay-black {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-top: 100%;
+    transition: all 1s;
+}
+
+.overlay-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.overlay-wrap:hover .overlay-black {
+    margin-top: 50%;
+}
+
+/* specificity 점수 높이기 */
+div.main-background .custom {
+    color: green;
+}
+
+div.main-background p.custom {
+    color: skyblue;
+}
+
+.custom {
+    color: red;
+}
+
+.ani-text {
+    /* transform:rotate(30deg); */
+    /* transform: translateX(100px); */
+    /* transform: scale(0.2); */
+    text-align: center;
+}
+
+@keyframes 왔다갔다 {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(-100px);
+    }
+    75%{
+        transform: translateX(100px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes 흔들흔들{
+    0% {
+        transform : rotate(0deg); 
+    }
+    25% {
+        transform : rotate(20deg); 
+    }
+    75% {
+        transform : rotate(-20deg); 
+    }
+    100% {
+        transform : rotate(0deg); 
+    }
+}
+@keyframes 빙그르르{
+    0% {
+        transform : rotate(0deg); 
+    }
+    50% {
+        transform : rotate(-30deg); 
+    }
+    100% {     
+        transform : rotate(30deg) scale(2);  
+    }
+}
+@keyframes 파칭{
+    0% {
+        transform : translateX(-100px);
+    }
+    50%{
+        transform :skew(-30deg) translateX(80px);
+    }
+
+    100% {     
+        transform :translateX(0px);
+    }
+}
+.ani-menu{
+    background-color: black;
+    color:white;
+    text-align: center;
+    width:100px;
+    height:100%;
+    padding:10px;
+    position :fixed;
+    left:0px;
+    top:0px;
+    z-index: 10;
+    transition: all 0.5s;
+}
+
+.ani-menu:hover{
+    width:300px;
+    transition: 0.5s;
+}
+.menu-content{
+    transform : translateX(-100px);
+}
+
+.ani-menu:hover .menu-content{
+    animation-name: 파칭;
+    animation-duration: 1s;
+    transform :translateX(0px);
+}
+
+.ani-mark{
+    font-size: 70px;
+    text-align: center;
+}
+.ani-mark:hover{
+    animation-name: 빙그르르;
+    animation-duration: 1s;
+}
+.ani-button{
+   display: block;
+   margin:30px auto;
+   background-color: skyblue;
+   color:white;
+   border:none;
+   font-size: 20px;
+   padding:20px;
+   border-radius: 5px;
+}
+
+.ani-button:hover{
+    animation-name: 흔들흔들;
+    animation-duration: 0.5s;
+}
+.ani-text:hover {
+    animation-name: 왔다갔다;
+    animation-duration: 1s;
+}
+
+/* main4.css
+.custom{
+    color:skyblue;
+}
+.custom{
+    color:red !important;
+} */
+/* 태블릿으로 볼 때 */
+@media screen and (max-width:1200px) {
+    .main-title {
+        font-size: 30px;
+
+    }
+
+    .flex-item {
+        font-size: 16px;
+    }
+
+    .test-container div {
+        width: 50%;
+    }
+
+    .test-container {
+        max-width: 600px;
+    }
+}
+
+/* 모바일로 볼 때 */
+@media screen and (max-width:768px) {
+    .main-title {
+        font-size: 20px;
+    }
+
+    .flex-item {
+        font-size: 12px;
+    }
+
+    .test-container div {
+        width: 100%;
+    }
+
+    .form-white div {
+        width: 100%;
+    }
+}
