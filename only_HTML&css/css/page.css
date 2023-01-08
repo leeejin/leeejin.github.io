@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 20px;
+    margin-top:10px;
+}
+
+.btn {
+    width: 7.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.main-btn {
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+
+.bg-image1 {
+    background-image: linear-gradient(to bottom, rgb(96, 184, 255), rgb(71, 98, 255));
+    height: 550px;
+    padding: 20px;
+    color: white;
+}
+
+.bg-image2 {
+    background: rgb(71, 98, 255);
+    height: 25rem;
+    color: white;
+}
+
+.background {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.main-text {
+    margin-top: 50px;
+    float: left;
+}
+
+.main-iphone {
+    width: 400px;
+    float: right;
+    margin-top: 95px;
+}
+
+.container-text {
+    text-align: center;
+    padding:20px;
+}
+.container {
+  display:flex;
+}
+
+.container div {
+    width: 25%;
+    cursor: pointer;
+}
+
+.container i {
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.container-style{
+    background: white;
+    color: rgb(71, 98, 255);
+}
+.image-item {
+    float: left;
+    width: 50%;
+    height:400px;
+}
+
+.image-item img {
+    width: 100%;
+    height:400px;
+    background-size: cover;
+}
+
+.overlay-black {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    transition: all 0.5s;
+}
+
+.overlay-wrap {
+    position: absolute;
+    width: 100%;
+    height:400px;
+    z-index: 2;
+    border: 0px solid white;
+}
+
+.overlay-wrap:hover .overlay-black {
+    border: 20px solid white;
+    cursor: pointer;
+}
+
+.container2 {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.container2 i {
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+.container2-style{
+    background: rgb(71, 98, 255);
+    color: white;
+}
+
+
+/* 모바일로 볼 때 */
+@media screen and (max-width:992px) {
+    .main-text {
+        float: none;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .main-iphone {
+        width: 280px;
+        height: 306px;
+        display: block;
+        float: none;
+        margin: auto;
+        margin-top: 42px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .container div {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+        margin:auto;
+    }
+    .bg-image2 {
+        height: 70rem;
+    }
+    .image-item {
+        float: left;
+        width: 100%;
+    }
+}
