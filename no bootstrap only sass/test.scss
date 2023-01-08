@@ -1,0 +1,94 @@
+@use 'reset';
+
+@mixin border($구멍){
+    border: 1px solid $구멍;
+    padding: 15px;
+}
+@mixin divinnerstyle($배경,$글색){
+    background-color:$배경;
+    color:$글색;
+}
+%btn{
+    width: 70%;
+    padding: 15px;
+    margin: auto;
+}
+.q1 {
+    @extend %btn;
+    list-style:none;
+    li{
+        @include border(grey);
+        border-bottom: none;
+    }
+    li:active {
+        @include border(reset.$배경컬러);
+        @include divinnerstyle(reset.$배경컬러,reset.$바뀐글색);
+    }
+}
+
+.q2{
+    @extend %btn;
+}
+%btn2{
+    margin-bottom:15px;
+    padding:15px;
+    border-radius: 5px;  
+}
+.box{
+    @extend %btn2;
+}
+.box:nth-child(1){
+    @include divinnerstyle(reset.$배경1컬러,reset.$글씨1컬러);
+}
+.box:nth-child(2){
+    @include divinnerstyle(reset.$배경2컬러,reset.$글씨2컬러);
+}
+.box:nth-child(3){
+    @include divinnerstyle(reset.$배경3컬러,reset.$글씨3컬러);
+}
+
+.q3{
+    @extend %btn;
+    
+}
+@mixin width($가로길이){
+    float:left;
+    width:$가로길이;
+    @include border(rgb(219, 159, 219));
+    text-align: center;
+    padding:15px;
+    padding-left: 0px;
+        padding-right: 0px;
+}
+.row{
+    @include divinnerstyle(rgb(255, 217, 255),black);
+    display: flex;
+    margin-bottom: 10px;
+    .col-12{
+        @include width(100%);
+    }
+    .col-6{
+        @include width(50%);
+    }
+    .col-4{
+        @include width(33.33%);
+    }
+    .col-3{
+        @include width(25%);
+    
+    }
+    .col-2{
+        @include width(16.67%);
+ 
+    }
+    .col-1{
+        @include width(8.33%);
+ 
+    }
+//    와 미디어쿼리했을 때 가로 줄이는 법을 모르겠다. 나중에 공부해야겠다
+    
+    
+}
+
+
+
