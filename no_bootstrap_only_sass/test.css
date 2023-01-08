@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.q3, .q2, .q1 {
+  width: 70%;
+  padding: 15px;
+  margin: auto;
+}
+
+.q1 {
+  list-style: none;
+}
+.q1 li {
+  border: 1px solid grey;
+  padding: 15px;
+  border-bottom: none;
+}
+.q1 li:active {
+  border: 1px solid rgb(0, 81, 255);
+  padding: 15px;
+  background-color: rgb(0, 81, 255);
+  color: white;
+}
+
+.box {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.box:nth-child(1) {
+  background-color: rgb(187, 255, 187);
+  color: rgb(70, 143, 70);
+}
+
+.box:nth-child(2) {
+  background-color: rgb(175, 207, 255);
+  color: rgb(77, 112, 163);
+}
+
+.box:nth-child(3) {
+  background-color: rgb(255, 255, 175);
+  color: rgb(150, 150, 70);
+}
+
+.row {
+  background-color: rgb(255, 217, 255);
+  color: black;
+  display: flex;
+  margin-bottom: 10px;
+}
+.row .col-12 {
+  float: left;
+  width: 100%;
+  border: 1px solid rgb(219, 159, 219);
+  padding: 15px;
+  text-align: center;
+  padding: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.row .col-6 {
+  float: left;
+  width: 50%;
+  border: 1px solid rgb(219, 159, 219);
+  padding: 15px;
+  text-align: center;
+  padding: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.row .col-4 {
+  float: left;
+  width: 33.33%;
+  border: 1px solid rgb(219, 159, 219);
+  padding: 15px;
+  text-align: center;
+  padding: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.row .col-3 {
+  float: left;
+  width: 25%;
+  border: 1px solid rgb(219, 159, 219);
+  padding: 15px;
+  text-align: center;
+  padding: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.row .col-2 {
+  float: left;
+  width: 16.67%;
+  border: 1px solid rgb(219, 159, 219);
+  padding: 15px;
+  text-align: center;
+  padding: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.row .col-1 {
+  float: left;
+  width: 8.33%;
+  border: 1px solid rgb(219, 159, 219);
+  padding: 15px;
+  text-align: center;
+  padding: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+}/*# sourceMappingURL=test.css.map */
