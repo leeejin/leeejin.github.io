@@ -1,0 +1,96 @@
+div {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  background: #eee;
+}
+
+.search {
+  width: 300px;
+  transition: all 1s;
+}
+
+.search:hover {
+  width: 400px;
+  transition: all 1s;
+}
+
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.bg-danger {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+}
+
+.menu-bar {
+  background: rgb(76, 0, 255);
+  color: white;
+  width: 150px;
+  transition: all 1s;
+  height: 100vh;
+  position: fixed;
+  padding: 20px;
+  z-index: 10;
+  transition: all 0.5s;
+  transform: translateX(-100px);
+}
+
+.menu-bar:hover {
+  transition: all 0.5s;
+  transform: translateX(0px);
+}
+.menu-bar:hover i {
+  transform: translateX(0px);
+}
+
+.menu-bar div {
+  margin: 12px 0px 0px -5px;
+}
+
+.menu-bar div:hover {
+  cursor: pointer;
+  color: black;
+  transition: all 0.5s;
+}
+
+.menu-bar i {
+  transform: translateX(100px);
+  font-size: 20px;
+}
+
+.card-icon {
+  margin-top: 20px;
+  color: grey;
+}
+
+.card {
+  margin-bottom: 10px;
+}
+
+.bg-primary {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.list-group-item:hover, .card:hover {
+  cursor: pointer;
+}
+
+.list-group-item:active {
+  background: rgb(16, 112, 255);
+  color: white;
+}
+.list-group-item:active .card-icon {
+  color: white;
+}/*# sourceMappingURL=test.css.map */

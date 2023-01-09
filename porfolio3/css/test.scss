@@ -1,0 +1,85 @@
+@use 'reset';
+
+@mixin searchw($가로길이){
+    width:$가로길이;
+    transition: all 1s;
+}
+@mixin backcolor($배경,$글씨){
+    background: $배경;
+    color:$글씨;
+}
+.search{
+   @include searchw(300px);
+}
+.search:hover{
+    @include searchw(400px);
+}
+.nav-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.nav-link{
+    position: relative;
+}
+.bg-danger{
+    position: absolute;
+    top:0px;
+    left:15px;
+}
+
+.menu-bar{
+    @include backcolor(reset.$메뉴바색,white);
+    @include searchw(150px);
+    height:100vh;
+    position:fixed;
+    padding:20px;
+    z-index: 10;
+    transition : all 0.5s;
+  transform: translateX(-100px);
+}
+.menu-bar:hover{
+    transition : all 0.5s;
+    transform: translateX(0px);
+    i{
+        transform: translateX(0px);
+    }
+    
+}
+.menu-bar div{
+    margin : 12px 0px 0px -5px;
+}
+.menu-bar div:hover{
+    cursor:pointer;
+    color:black;
+    transition: all 0.5s;
+}
+.menu-bar i{
+    
+    transform: translateX(100px);
+    font-size: 20px;
+}
+
+@mixin border($color){
+    border-left: 5px solid $color;
+}
+.card-icon{
+    margin-top: 20px;
+    color:grey;
+}
+.card{
+    margin-bottom: 10px;
+}
+.bg-primary{
+    position: absolute;
+    top:10px;
+    right:10px;
+}
+.list-group-item:hover,.card:hover{
+    cursor:pointer;
+}
+.list-group-item:active{
+    @include backcolor(rgb(16, 112, 255),white);
+   .card-icon{
+        color:white;
+    }
+}
