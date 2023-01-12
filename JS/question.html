@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<style>
+    div{
+        box-sizing: border-box;
+    }
+.question{
+    margin:5px;
+    border-radius: 5px;
+    padding:10px;
+}
+</style>
+<body>
+    <!-- 문제 1,2 -->
+    <div class="question">
+        <h5>369게임</h5>
+        <input type="text" id="q1">
+        <button id="s1">결과보기</button>
+        <p id="a1"></p>
+    </div>
+   
+
+    <!-- 응용1 -->
+   
+    <div class="question">
+        <h5>369게임 응용</h5>
+        <input type="text" id="q2">
+        <button id="s2">결과보기</button>
+        <p id="a2"></p>
+    
+    </div>
+
+    <!-- 문제 3 -->
+    <div class="question">
+        <div style="float:left;margin-right: 5px;">
+            <h5>개론:</h5>
+        <input type="text" id="q3-1">
+        </div>
+        
+        <div style="float:left">
+            <h5>민법:</h5>
+            <input type="text" id="q3-2">
+        </div>
+        <div style="clear:both"></div>
+        <button id="s3">결과보기</button>
+        <p id="a3"></p>
+    </div>
+
+    <script>
+
+        $('#s1').on('click',function() {
+            let num = $('#q1').val();
+            if (num % 9 == 0) {
+                $('#a1').html('박수!x2');
+            }
+            else if (num % 3 == 0) {
+                $('#a1').html('박수!');
+            }
+            else {
+                $('#a1').html('통과!');
+            }
+        });
+
+        $('#s2').on('click',function() {
+            var str = $('#q2').val();
+            let last_char = str.substr(str.length - 1, 1);
+            if (last_char == 3 || last_char == 6 || last_char == 9) {
+                $('#a2').html('박수!');
+            } else {
+                $('#a2').html('통과!');
+            }
+        });
+
+        $('#s3').on('click',function() {
+            var num1 = Number($('#q3-1').val());
+            var num2 = Number($('#q3-2').val());
+            if (num1 >= 0 && num1 <= 100 && num2 >= 0 && num2 <= 100) {
+                if (num1 < 40 || num2 < 40) {
+                    $('#a3').html('불합격!');
+                } else if (num1 + num2 >= 120) {
+                    $('#a3').html('합격!');
+                } else {
+                    $('#a3').html('불합격!');
+                }
+            }
+            else{
+                $('#a3').html('제대로 입력하소');
+            }
+
+        });
+    </script>
+</body>
+
+</html>
