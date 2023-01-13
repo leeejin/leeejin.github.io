@@ -1,3 +1,14 @@
+div {
+    box-sizing: border-box;
+}
+/* :root{
+    scroll-behavior: auto;
+} */
+.question {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+}
 .navbar{
     z-index: 5;
 }
@@ -43,4 +54,38 @@
 
 .errorinform{
     border:2px solid red;
+}
+.badge:hover{
+    cursor:pointer;
+}
+.bg-dark{
+    background: black;
+    color:white;
+}
+.bg-light{
+    background: white;
+    color:black;
+}
+
+.slide-container{
+    width:300vw;
+    /* margin-left: -100vw; */
+    transition: all 1s;
+}
+.slide-box{
+    width:100vw;
+    float:left;
+}
+.slide-box img{
+    width:100%;
+}
+
+.navbar{
+    position: fixed;
+    width:100%;
+    z-index: 5;
+}
+.navbar-brand{
+    font-size:30px;
+    transition : all 1s;
 }
