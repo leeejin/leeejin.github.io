@@ -33,7 +33,8 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <span class="navbar-brand">Navbar</span>
+            <span class="navbar-brand">JSShop</span>
+            <span class="badge bg-dark" id="mode">Dark 🔄</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,51 +48,40 @@
         <li class="list-group-item">And a fifth one</li>
     </ul>
 
-
     <div class="main-bg">
         <h4>Shirts on Sale</h4>
         <button id="open" class="btn btn-danger">로그인</button>
     </div>
+    <div class="alert alert-danger">
+        <span id="num">5</span>초 이내 구매시 사은품 증정!
+    </div>
+    <div style="overflow:hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="car1.png">
+            </div>
+            <div class="slide-box">
+                <img src="car2.png">
+            </div>
+            <div class="slide-box">
+                <img src="car3.png">
+            </div>
+        </div>
+    </div>
+    <button class="slide-before">이전</button>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="slide-next">다음</button>
 
-    <script>
-        $('#open').on('click', function () {
-            $('.black-bg').addClass('show-modal');
-        })
-        $('#close').on('click', function () {
-            $('.black-bg').removeClass('show-modal');
-        })
-        $('.navbar-toggler').on('click', function () {
-            $('.list-group').toggleClass('show');
-        })
-
-
-        $('form').on('submit', function (e) {
-            if ($('#email').val() == '') {
-                alert('아이디입력하시오.');
-                e.preventDefault(); //폼 전송 막음
-            }
-            else if ($('#password').val() == '') {
-                alert('비밀번호입력하시오.');
-                e.preventDefault();
-            }
-            else if ($('#password').val().length < 6) {
-                alert('비밀번호 6자리이상 써주세요.');
-                e.preventDefault();
-            }
-        });
-        $('#password').on('change', function () {
-
-            if ($('#password').val().length < 6) {
-                $('#pwinform').html('비밀번호 6자리이상 써주세요.');
-                $('#password').addClass('errorinform');
-                e.preventDefault();
-            }
-            else{
-                $('#pwinform').html('password');
-                $('#password').removeClass('errorinform');
-            }
-        })
-    </script>
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit
+        debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur
+        praesentium exercitationem.
+    </div>
+    <div style="height:1000px;"></div>
+    
+    <script src="modal.js"></script>
 </body>
 
 </html>
