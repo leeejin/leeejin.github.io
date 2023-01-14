@@ -111,11 +111,11 @@ $('.slide-next').on('click', function () {
     }
 });
 
-window.addEventListener('scroll', function () {
+$(window).on('scroll', function () {
     if (window.scrollY >= 100) {
         $('.navbar-brand').css('font-size', '20px');
     }
-    else if(window.scrollY==0){
+    else if (window.scrollY == 0) {
         $('.navbar-brand').css('font-size', '30px');
     }
 });
@@ -123,7 +123,27 @@ window.addEventListener('scroll', function () {
 $('.lorem').on('scroll', function () {
     var 스크롤양 = document.querySelector('.lorem').scrollTop;
     var 실제높이 = document.querySelector('.lorem').scrollHeight;
+    var 높이 = document.querySelector('.lorem').clientHeight;
+    // 스크롤양 + 높이 == 실제높이
     if (스크롤양 + 100 == 실제높이) {
         alert('정독완료');
     }
+    // if (스크롤양 + 높이 > 실제높이 - 10) {
+    //     alert('정독완료');
+    // }
+
+    //  document.querySelector('html').scrollHeight; //현재 페이지 실제 높이
+    // //  = document.documentElement.scrollHeight
+    // document.querySelector('.lorem').clientHeight; //페이지 보이는 높이
+    // // var 높이 = document.querySelector('.lorem').scrollTop; //현재 페이지 스크롤양
+    // window.scrollY // = 현재 페이지 스크롤양
+});
+
+$(window).on('scroll', function () {
+    let totalY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrollY = document.documentElement.scrollTop;
+    let currentPercentage = (scrollY/totalY)*100;
+   document.querySelector(".scrollrange").style.width = currentPercentage+"%";
+    $('.scrollrange span').html(currentPercentage.toFixed(0)+"%");
+
 });
