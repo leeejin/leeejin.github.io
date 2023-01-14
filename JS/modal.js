@@ -7,6 +7,20 @@ $('#close').on('click', function () {
 $('.navbar-toggler').on('click', function () {
     $('.list-group').toggleClass('show');
 })
+document.querySelector('.black-bg').addEventListener('click', function (e) {
+    // e.target; //유저가 실제로 누른거
+    // console.log(e.target); 
+    // e.currentTarget;  //이벤트 리스너 달린 곳 =this
+
+    // e.preventDefault(); //이벤트 기본동작 막아줌
+    // e.stopPropagation(); //내 상위요소로 이벤트 버블링 막아줌
+    // = $(e.target).is($('.black-bg'))
+    // = e.target == e.currentTarget
+    // = e.target == this
+    if (e.target == document.querySelector('.black-bg')) {
+        document.querySelector('.black-bg').classList.remove('show-modal');
+    }
+});
 
 
 $('form').on('submit', function (e) {
@@ -44,7 +58,7 @@ $('#password').on('change', function () {
         $('#pwinform').html('password');
         $('#password').removeClass('errorinform');
     }
-})
+});
 
 var count = 0;
 $('#mode').on('click', function () {
@@ -142,8 +156,8 @@ $('.lorem').on('scroll', function () {
 $(window).on('scroll', function () {
     let totalY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     let scrollY = document.documentElement.scrollTop;
-    let currentPercentage = (scrollY/totalY)*100;
-   document.querySelector(".scrollrange").style.width = currentPercentage+"%";
-    $('.scrollrange span').html(currentPercentage.toFixed(0)+"%");
+    let currentPercentage = (scrollY / totalY) * 100;
+    document.querySelector(".scrollrange").style.width = currentPercentage + "%";
+    $('.scrollrange span').html(currentPercentage.toFixed(0) + "%");
 
 });
