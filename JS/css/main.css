@@ -84,7 +84,7 @@ div {
 .navbar{
     position: fixed;
     width:100%;
-    z-index: 5;
+    z-index: 10;
 }
 .navbar-brand{
     font-size:30px;
