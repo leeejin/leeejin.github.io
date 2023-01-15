@@ -15,12 +15,13 @@ div {
 .list-group{
     width:100%;
     position:fixed;
-    top:-250px;
+    top:-300px;
+    left:0px;
     transition: all 1s;
 }
 
 .show {
-    top:50px;
+    top:55px;
 }
 
 
@@ -30,7 +31,7 @@ div {
     height: 100%;
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+    z-index: 6;
     padding: 30px;
     visibility: hidden;
     opacity: 0;
@@ -88,4 +89,21 @@ div {
 .navbar-brand{
     font-size:30px;
     transition : all 1s;
+}
+
+.scrollrange{
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index: 10;
+    height:5px;
+    background:black;
+    width:0%;
+}
+.scrollrange span{
+    float:right;
+    background:#eee;
+    border-radius: 5px;
+    margin-top:5px;
+    padding:1px;
 }

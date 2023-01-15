@@ -93,18 +93,25 @@ setInterval(function () {
 }, 1000);
 
 var SlideScreen = 0;
-$('.slide-1').on('click', function () {
-    $('.slide-container').css('transform', 'translateX(0vw)');
-    SlideScreen = 0;
-});
-$('.slide-2').on('click', function () {
-    $('.slide-container').css('transform', 'translateX(-100vw)');
-    SlideScreen = 1;
-});
-$('.slide-3').on('click', function () {
-    $('.slide-container').css('transform', 'translateX(-200vw)');
-    SlideScreen = 2;
-});
+for (let i = 0; i < 3; i++) {
+    $('.slide').eq(i).on('click', function () {
+        $('.slide-container').css('transform', 'translateX(-' + i + '00vw)');
+        SlideScreen = i;
+    });
+}
+
+// $('.slide-1').on('click', function () {
+//     $('.slide-container').css('transform', 'translateX(0vw)');
+//     SlideScreen = 0;
+// });
+// $('.slide-2').on('click', function () {
+//     $('.slide-container').css('transform', 'translateX(-100vw)');
+//     SlideScreen = 1;
+// });
+// $('.slide-3').on('click', function () {
+//     $('.slide-container').css('transform', 'translateX(-200vw)');
+//     SlideScreen = 2;
+// });
 
 $('.slide-before').on('click', function () {
     SlideScreen--;
@@ -130,7 +137,7 @@ $(window).on('scroll', function () {
         $('.navbar-brand').css('font-size', '20px');
     }
     else if (window.scrollY == 0) {
-        $('.navbar-brand').css('font-size', '30px');
+        $('.navbar-brand').css('font-size', '23px');
     }
 });
 //div의 스크롤바 내린 양 + 눈에보이는 div높이 == div의 실제높이

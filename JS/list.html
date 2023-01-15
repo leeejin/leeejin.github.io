@@ -55,52 +55,48 @@
         .show {
             display: block;
         }
-
-       /* .form-hide{
-            display:none;
-        } */
     </style>
 
-    <div class="container mt-3">
-        <div class="card p-3">
-            <span class="carName">상품명</span> <span class="carPrice">가격</span>
+    <div class="card-group container">
+        <div class="card">
+            <img src="https://via.placeholder.com/600">
+            <div class="card-body">
+                <h5 class="title">Card title</h5>
+                <p class="price">가격 : 70000</p>
+                <button class="btn btn-danger">주문하기</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/600">
+            <div class="card-body">
+                <h5>Card title</h5>
+                <p>가격 : 70000</p>
+                <button class="btn btn-danger">주문하기</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/600">
+            <div class="card-body">
+                <h5>Card title</h5>
+                <p>가격 : 70000</p>
+                <button class="btn btn-danger">주문하기</button>
+            </div>
         </div>
     </div>
 
-    <form class="container my-5 form-group">
-        <p>상품선택</p>
-        <select class="form-select mt-2">
-            <option>모자</option>
-            <option>셔츠</option>
-            <option>바지</option>
-        </select>
-        <select class="form-select mt-2" style="display:none">
-           
-        </select>
-    </form>
+    <script>
+        var products = [
+            { id: 0, price: 70000, title: 'Blossom Dress' },
+            { id: 1, price: 50000, title: 'Springfield Shirt' },
+            { id: 2, price: 60000, title: 'Black Monastery' }
+        ];
 
-<div id="test">
-    
-</div>
+        for (let i = 0; i < 3; i++) {
+            document.querySelectorAll('.card-body h5')[i].innerHTML = products[i].title;
+            document.querySelectorAll('.card-body p')[i].innerHTML = `가격 : ${products[i].price}`;
+        }
 
-    <div class="container mt-5">
-        <ul class="list">
-            <li class="tab-button" data-id="0">Products</li>
-            <li class="tab-button" data-id="1">Information</li>
-            <li class="tab-button" data-id="2">Shipping</li>
-        </ul>
-        <div class="tab-content">
-            <p>상품설명입니다. Product</p>
-        </div>
-        <div class="tab-content">
-            <p>스펙설명입니다. Information</p>
-        </div>
-        <div class="tab-content">
-            <p>배송정보입니다. Shipping</p>
-        </div>
-    </div>
-
-    <script src="tab2.js"></script>
+    </script>
 
 </body>
 
