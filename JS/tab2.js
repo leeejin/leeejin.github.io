@@ -46,25 +46,41 @@ document.querySelector('.carPrice').innerHTML = car2.price[0]; //변수넣기 �
 //     else if (value == '모자')
 //         $('.form-select').eq(1).addClass('form-hide');
 // });
+
+var obj = {name : 'kim',age:20};
+for(var key in obj){
+    console.log(key+' : '+obj[key]);
+}
+
+var pants = [28, 30, 32, 34];
+var shirts = [95, 100, 105];
 document.querySelectorAll('.form-select')[0].addEventListener('input', function () {
-    var value = document.querySelectorAll('.form-select')[0].value;
-    var 바지 = '<option>28</option><option>30</option>';
-    var 셔츠 = ' <option>95</option><option>100</option>';
+    var value = this.value;
+    // var 바지 = '<option>28</option><option>30</option>';
+    //var 셔츠 = ' <option>95</option><option>100</option>';
     if (value == '셔츠') {
         document.querySelectorAll('.form-select')[1].style.display = 'block';
-        document.querySelectorAll('.form-select')[1].innerHTML=셔츠;
+        document.querySelectorAll('.form-select')[1].innerHTML = '';
+        shirts.forEach(function (data) { 
+            //function 안에서 쓰면 this가 알맞게 재정의 됨
+            //그래서 e.currentTarget이런거 쓰면 그냥 function쓰는게 알맞음
+            document.querySelectorAll('.form-select')[1].insertAdjacentHTML('beforeend', `<option>${data}</option>`)
+        })
     }
     else if (value == '모자') {
         document.querySelectorAll('.form-select')[1].style.display = 'none';
     }
-    else if (value =='바지'){
+    else if (value == '바지') {
         document.querySelectorAll('.form-select')[1].style.display = 'block';
-        document.querySelectorAll('.form-select')[1].insertAdjacentHTML('beforeend',바지);
+        document.querySelectorAll('.form-select')[1].innerHTML = '';
+        // document.querySelectorAll('.form-select')[1].insertAdjacentHTML('beforeend', 바지);
+        //array자료에만 쓸수 있는 반복문
+        pants.forEach( (data) => {
+            //this값을 쓸 경우 arrowfunction을 안에서 쓰면 바깥에 있던 this를 그대로 가져다 씀
+            document.querySelectorAll('.form-select')[1].insertAdjacentHTML('beforeend', `<option>${data}</option>`);
+        });
     }
-    
-    
 })
-
 // var a = document.createElement('p');
 // a.innerHTML = '안녕';
 // document.querySelector('#test').appendChild(a);
