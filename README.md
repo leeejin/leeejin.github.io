@@ -26,9 +26,11 @@
    <p>https://leeejin.github.io/JS/success.html</p>
 4. <h3>総 4問題のクイズ</h3>
    <p>https://leeejin.github.io/JS/question.html</p>
-5. <h3>クイズ2</h3>
+5. <h3>カテゴリー</h3>
    <p>https://leeejin.github.io/JS/detail.html</p>
    <p>https://leeejin.github.io/JS/detail2.html</p>
-6. <h3>for,array並べる</h3>
+6. <h3>クイズ2</h3>
+   <p>leeejin.leeejin.github.io/JS/forarray.js </p>
+7. <h3>for,array並べる</h3>
    <p>https://leeejin.github.io/JS/list.html</p>
    <p>https://leeejin.github.io/JS/list_v2.html</p>
