@@ -109,7 +109,7 @@
         <button class="btn btn-primary" id="wordresort">다나카정렬</button>
         <button class="btn btn-primary" id="pricefilter">가격필터</button>
         <button class="btn btn-primary" id="reset">원래대로</button>
-        <button class="btn btn-danger" onclick = "location.href = 'cart.html'">장바구니페이지</button>
+        <button class="btn btn-danger" onclick="location.href = 'cart.html'">장바구니페이지</button>
     </div>
 
     <script>
@@ -150,6 +150,10 @@
                         clone.push(data);
                         products.push(data);
                         htmlcard(data);
+                    });
+
+                    $('.buy').on('click', function (e) {
+                        cartArr(e);
                     })
                 })
             btncount++;
@@ -159,18 +163,48 @@
 
         })
 
-        $('.buy').click(function (e) {
-            var title = $(e.target).siblings('h5').text();
-            if (localStorage.getItem('cart') != null) {
-                var 꺼낸거 = JSON.parse(localStorage.cart);
-                꺼낸거.push(title);
-                localStorage.setItem('cart', JSON.stringify(꺼낸거));
-            } else {
-                localStorage.setItem('cart', JSON.stringify([title]))
+
+        //         2. 아니면 같은 상품 구매 누르면 상품 갯수가 올라가게?
+        // 상품명을 localStorage에 저장시 갯수도 저장하면 됩니다.
+        // [ '상품명a 2개', '상품명b 4개' ... ] 이렇게 저장해도 되겠지만 여러 정보를 한 곳에 넣고 싶으면 array/object 쓰면 됩니다.
+        $('.buy').on('click', function (e) {
+            cartArr(e);
+        })
+        function cartArr(e) {
+
+            var title = $(e.target).siblings('h5').html();
+            var arr = { title: `${title}`, num: 1 };
+
+            if (localStorage.getItem('cart') != null) { //1.뭐가 있을때
+
+                // 3.중복되는게 있을때
+                if (localStorage.getItem('cart').includes(title) == true) {
+                    //5.중복추가 안되게 하기
+                    //alert('중복은 안됩니다!');
+
+                    //6.상품갯수 올리기
+                    var 꺼낸거 = JSON.parse(localStorage.cart);
+                    for (let j = 0; j < 꺼낸거.length; j++) {
+                        if (title == 꺼낸거[j].title) {
+                            꺼낸거[j].num += 1;
+                        }
+                    }
+                    localStorage.setItem('cart', JSON.stringify(꺼낸거));
+
+
+                }
+                //4.없을때
+                else {
+                    var 꺼낸거 = JSON.parse(localStorage.cart);
+                    꺼낸거.push(arr);
+                    localStorage.setItem('cart', JSON.stringify(꺼낸거));
+                }
+            }
+            else { //2.아무것도 없을때
+                localStorage.setItem('cart', JSON.stringify([arr]))
             }
 
-        });
-
+        }
         // localStorage.setItem('이름','kim'); //데이터 넣기
         // localStorage.getItem('이름'); //데이터 읽기
         // localStorage.removeItem('이름'); //데이터 삭제
@@ -189,12 +223,18 @@
 
         $('#reset').on('click', function () {
             plz(products);
+            $('.buy').on('click', function (e) {
+                cartArr(e);
+            })
         });
         $('#prisort').on('click', function () {
             clone.sort(function (a, b) {
                 return a.price - b.price;
             });
             plz(clone);
+            $('.buy').on('click', function (e) {
+                cartArr(e);
+            })
         });
 
         $('#pricefilter').on('click', function () {
@@ -213,7 +253,9 @@
                 });
                 plz(newpro);
             }
-
+            $('.buy').on('click', function (e) {
+                cartArr(e);
+            })
 
         })
 
@@ -225,10 +267,16 @@
 
         $('#wordsort').on('click', function () {
             wsort(1, -1);
+            $('.buy').on('click', function (e) {
+                cartArr(e);
+            })
         });
 
         $('#wordresort').on('click', function () {
             wsort(-1, 1);
+            $('.buy').on('click', function (e) {
+                cartArr(e);
+            })
         });
         function wsort(one, two) {
             clone.sort((a, b) => {
