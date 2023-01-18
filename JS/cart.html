@@ -13,18 +13,41 @@
 </head>
 
 <body>
-    <div class="container">
-            <h5>장바구니 페이지</h5>
-        <div class="row"></div>
-    </div>
-    
-    <script>
-        var 꺼낸거 = JSON.parse(localStorage.cart); 
-        for (let i = 0; i < 꺼낸거.length; i++) {
-            var p = `<p>${i+1} : ${꺼낸거[i].title}, ${꺼낸거[i].num}개<p>`;
-                $('.row').append(p);
+    <style>
+        .del {
+            width: 4rem;
         }
-       
+        .row{
+            background:rgb(216, 216, 216);
+            border-radius: 5px;
+            padding:10px;
+        }
+    </style>
+    <div class="container mt-3">
+        <h5><strong>장바구니 페이지</strong></h5>
+        <button class="btn btn-warning" onclick="location.href = 'list_v2.html'">돌아가기</button>
+        <button class="btn btn-danger alldel">전체삭제</button>
+        <div class="row mt-3"></div>
+
+    </div>
+
+    <script>
+        var 꺼낸거 = JSON.parse(localStorage.cart);
+        for (let i = 0; i < 꺼낸거.length; i++) {
+            var p = `<p>${i + 1} : ${꺼낸거[i].title}, ${꺼낸거[i].num}개
+                <button class="btn btn-danger del">삭제</button></p>`;
+            $('.row').append(p);
+        }
+
+        $('.del').on('click', function (e) {
+            alert('개별 삭제버튼은 나중에 할 예정 많관부');
+        });
+
+        $('.alldel').on('click', function (e) {
+            window.localStorage.clear();
+            $('.row').html('');
+        });
+
     </script>
 </body>
 

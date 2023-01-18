@@ -102,14 +102,21 @@
             </div> -->
         </div>
     </div>
-    <div class="container">
-        <button class="btn btn-danger" id="more">더보기</button>
-        <button class="btn btn-primary" id="prisort">가격내림순</button>
-        <button class="btn btn-primary" id="wordsort">가나다정렬</button>
-        <button class="btn btn-primary" id="wordresort">다나카정렬</button>
-        <button class="btn btn-primary" id="pricefilter">가격필터</button>
-        <button class="btn btn-primary" id="reset">원래대로</button>
-        <button class="btn btn-danger" onclick="location.href = 'cart.html'">장바구니페이지</button>
+
+    <div class="container mt-3">
+        <div style="margin-bottom:10px">
+            <button class="btn btn-danger" id="more">더보기</button>
+            <button class="btn btn-warning" onclick="location.href = 'cart.html'">장바구니</button>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div style="margin-bottom:10px">
+            <button class="btn btn-light" id="prisort">가격내림순</button>
+            <button class="btn btn-light" id="wordsort">가나다순</button>
+            <button class="btn btn-light" id="wordresort">다나카순</button>
+            <button class="btn btn-light" id="pricefilter">가격필터</button>
+            <button class="btn btn-light" id="reset">원래대로</button>
+           </div>
     </div>
 
     <script>
@@ -132,7 +139,7 @@
                 <img src="https://via.placeholder.com/600" class="w-100">
                 <h5>${data.title}</h5>
                 <p>가격 : ${data.price}</p>
-                <button class="btn buy">구매</button>
+                <button class="btn btn-success buy">구매</button>
                 </div>`;
             $('.row').append(card);
         }
