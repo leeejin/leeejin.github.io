@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apple Music UI</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body style="overflow-x: hidden">
+    <div class="card-background">
+        <div class="card-box">
+            <img src="card1.png">
+        </div>
+        <div class="card-box">
+            <img src="card2.png">
+        </div>
+        <div class="card-box">
+            <img src="card3.png">
+        </div>
+    </div>
+
+
+    <script>
+        $(window).scroll(function () {
+            var 높이 = $(window).scrollTop();
+            // 650~1150까지 스크롤바 내리면, 
+            // 첫째 카드의 opacity 1~0으로 서서히 변경해주셈
+            var y1 = (-1 / 500) * 높이 + 115 / 50;
+            // 1 = a * 650 + b;
+            // 0 = a * 1150 + b;
+            // a = -1/500 , b = 115/50
+            // 연립방정식 !! 해서 a,.b 구하기
+            $('.card-box').eq(0).css('opacity', y1);
+
+            // 1 = a*650 + b;
+            // 0.9 = a*1150 + b;
+            // a= -1/5000 b= 565/500
+            var z1 = (-1 / 5000) * 높이 + 565 / 500;
+            $('.card-box').eq(0).css('transform', `scale( ${z1} )`);
+
+            console.log(높이);
+            //1450~1950까지
+            //a = -1/550 b= 195/55
+            var y2 = (-1 / 550) * 높이 + 195 / 55;
+            //a = -1/5500 b = 195/55
+             var z2 = ( -1/5500) * 높이 + 69/55;
+            $('.card-box').eq(1).css('opacity', y2);
+            $('.card-box').eq(1).css('transform', `scale( ${z2} )`);
+            
+            
+
+           
+        });
+    </script>
+</body>
+
+</html>
