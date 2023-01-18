@@ -71,14 +71,14 @@ div {
 .slide-container{
     width:300vw;
     /* margin-left: -100vw; */
-    transition: all 1s;
+    /* transition: all 0.5s; */
 }
 .slide-box{
     width:100vw;
     float:left;
 }
 .slide-box img{
-    width:100%;
+    width: 2000px;
 }
 
 .navbar{
