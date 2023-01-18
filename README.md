@@ -31,6 +31,8 @@
    <p>https://leeejin.github.io/JS/detail2.html</p>
 6. <h3>クイズ2</h3>
    <p>leeejin.leeejin.github.io/JS/forarray.js </p>
-7. <h3>for,array並べる</h3>
+7. <h3>for,array並べ、買い物かご追加</h3>
    <p>https://leeejin.github.io/JS/list.html</p>
    <p>https://leeejin.github.io/JS/list_v2.html</p>
+8. <h3>sticky深化</h3>
+   <p>https://leeejin.github.io/JS/grid.html</p>
