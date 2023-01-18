@@ -168,3 +168,232 @@ $(window).on('scroll', function () {
     $('.scrollrange span').html(currentPercentage.toFixed(0) + "%");
 
 });
+
+// for(let q=0; q<3; q++){
+//     $('.slide-box').eq(q).on('mousedown', function (e) {
+//         시작좌표 = e.clientX;
+//          눌렀니 = true;
+//     });
+//     $('.slide-box').eq(q).on('mousemove', function (e) {
+//         console.log(e.clientX - 시작좌표);
+//         if(눌렀니 ==true){
+//             $('.slide-container').css('transform', `translateX(${e.clientX - 시작좌표}px)`);
+//         }
+      
+//     });
+    
+//     $('.slide-box').eq(q).on('mouseup',function(e){
+        
+//         if (e.clientX - 시작좌표 < -100) {
+//             $('.slide-container').css('transition', 'all 0.5s').css('transform', `translateX(-${q+1}00vw)`);
+//             SlideScreen;
+//             if(q==2)
+//             $('.slide-container').css('transition', 'all 0.5s').css('transform', `translateX(-${q}00vw)`);
+//           } 
+//           else if(e.clientX - 시작좌표 >100){
+//             if(q==0)
+//             $('.slide-container').css('transition', 'all 0.5s').css('transform', `translateX(-${q}00vw)`);
+//           }
+//           else {
+//             $('.slide-container').css('transition', 'all 0.5s').css('transform', `translateX(-${q}00vw)`);
+//           }
+//           setTimeout(()=>{
+//             $('.slide-container').css('transition', 'none')
+//           }, 500)
+          
+//         눌렀니 = false;
+//     });
+    
+// }
+
+var 시작좌표 = 0;
+var 눌렀니 = false;
+
+$('.slide-box').eq(0).on('mousedown', function (e) {
+    시작좌표 = e.clientX;
+     눌렀니 = true;
+});
+$('.slide-box').eq(0).on('mousemove', function (e) {
+    console.log(e.clientX - 시작좌표);
+    if(눌렀니 ==true){
+        if(e.clientX - 시작좌표<0){
+        $('.slide-container').css('transform', `translateX(${e.clientX - 시작좌표}px)`);
+    }
+    }
+  
+});
+
+$('.slide-box').eq(0).on('mouseup',function(e){
+    
+    if (e.clientX - 시작좌표 < -100) {
+        $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-100vw)');
+        SlideScreen = 1;
+      } else {
+        $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(0vw)');
+        SlideScreen = 0;
+      }
+      setTimeout(()=>{
+        $('.slide-container').css('transition', 'none')
+      }, 500)
+      
+    눌렀니 = false;
+});
+
+
+$('.slide-box').eq(1).on('mousedown', function (e) {
+    시작좌표 = e.clientX+2000;
+     눌렀니 = true;
+});
+$('.slide-box').eq(1).on('mousemove', function (e) {
+    console.log(e.clientX - 시작좌표);
+    if(눌렀니 ==true){
+        $('.slide-container').css('transform', `translateX(${e.clientX - 시작좌표}px)`);
+    }
+  
+});
+
+$('.slide-box').eq(1).on('mouseup',function(e){
+    
+    if (e.clientX - 시작좌표 < -2000) {
+        $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-200vw)');
+        SlideScreen = 2;
+      } 
+    else{
+        $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-0vw)');
+        SlideScreen = 0;
+      }
+   
+      setTimeout(()=>{
+        $('.slide-container').css('transition', 'none')
+      }, 500)
+      
+    눌렀니 = false;
+});
+
+$('.slide-box').eq(2).on('mousedown', function (e) {
+    시작좌표 = e.clientX+4000;
+     눌렀니 = true;
+});
+$('.slide-box').eq(2).on('mousemove', function (e) {
+    console.log(e.clientX - 시작좌표);
+    if(눌렀니 ==true){
+        if(e.clientX - 시작좌표>-4000){
+        $('.slide-container').css('transform', `translateX(${e.clientX - 시작좌표}px)`);
+
+        }
+    }
+  
+});
+
+$('.slide-box').eq(2).on('mouseup',function(e){
+    
+    if (e.clientX - 시작좌표 < -4000) {
+        $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-200vw)');
+        SlideScreen = 2;
+      } 
+
+      else {
+        $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-100vw)');
+        SlideScreen = 1;
+      }
+      setTimeout(()=>{
+        $('.slide-container').css('transition', 'none')
+      }, 500)
+      
+    눌렀니 = false;
+});
+//Hammer.js 라이브러리 같은거쓰면 편함
+
+// $('.slide-box').eq(0).on('touchstart', function (e) {
+//     시작좌표 = e.touches[0].clientX;
+//      눌렀니 = true;
+// });
+// $('.slide-box').eq(0).on('touchmove', function (e) {
+//     console.log( e.touches[0].clientX - 시작좌표);
+//     if(눌렀니 ==true){
+//         if( e.touches[0].clientX - 시작좌표<0){
+//         $('.slide-container').css('transform', `translateX(${ e.touches[0].clientX - 시작좌표}px)`);
+//     }
+//     }
+  
+// });
+
+// $('.slide-box').eq(0).on('touchend',function(e){
+    
+//     if ( e.touches[0].clientX - 시작좌표 < -100) {
+//         $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-100vw)');
+//         SlideScreen = 1;
+//       } else {
+//         $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(0vw)');
+//         SlideScreen = 0;
+//       }
+//       setTimeout(()=>{
+//         $('.slide-container').css('transition', 'none')
+//       }, 500)
+      
+//     눌렀니 = false;
+// });
+
+
+// $('.slide-box').eq(1).on('touchstart', function (e) {
+//     시작좌표 =  e.touches[0].clientX+2000;
+//      눌렀니 = true;
+// });
+// $('.slide-box').eq(1).on('touchmove', function (e) {
+//     console.log( e.touches[0].clientX - 시작좌표);
+//     if(눌렀니 ==true){
+//         $('.slide-container').css('transform', `translateX(${ e.touches[0].clientX - 시작좌표}px)`);
+//     }
+  
+// });
+
+// $('.slide-box').eq(1).on('touchend',function(e){
+    
+//     if ( e.touches[0].clientX - 시작좌표 < -2100) {
+//         $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-200vw)');
+//         SlideScreen = 2;
+//       } 
+//     else{
+//         $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-0vw)');
+//         SlideScreen = 0;
+//       }
+   
+//       setTimeout(()=>{
+//         $('.slide-container').css('transition', 'none')
+//       }, 500)
+      
+//     눌렀니 = false;
+// });
+
+// $('.slide-box').eq(2).on('touchstart', function (e) {
+//     시작좌표 =  e.touches[0].clientX+4000;
+//      눌렀니 = true;
+// });
+// $('.slide-box').eq(2).on('touchmove', function (e) {
+//     console.log( e.touches[0].clientX - 시작좌표);
+//     if(눌렀니 ==true){
+//         if( e.touches[0].clientX - 시작좌표>-3900){
+//         $('.slide-container').css('transform', `translateX(${ e.touches[0].clientX - 시작좌표}px)`);
+
+//         }
+//     }
+  
+// });
+
+// $('.slide-box').eq(2).on('touchend',function(e){
+    
+//     if ( e.touches[0].clientX - 시작좌표 < -4100) {
+//         $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-200vw)');
+//         SlideScreen = 2;
+//       } 
+
+//       else {
+//         $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-100vw)');
+//         SlideScreen = 1;
+//       }
+//       setTimeout(()=>{
+//         $('.slide-container').css('transition', 'none')
+//       }, 500)
+      
+//     눌렀니 = false;
+// });
