@@ -39,5 +39,5 @@
    <p>https://leeejin.github.io/JS/grid.html</p>
 9. <h3>
    <p>
-10.<h3>웹개발기능대회문제</h3>
+10. <h3>웹개발기능대회문제</h3>
    <p>https://leeejin.github.io/JS/Web/home.html</p>
