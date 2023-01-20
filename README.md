@@ -1,43 +1,70 @@
-# 勉強日記✍
+# Getting Started with Create React App
 
-### HTML/CSS
-1. <h3>Bootstrapを初めて使って見た</h3>
-   <p>https://leeejin.github.io/portfolio2/bootstrap2.html</p>
-2. <h3>モバイルのlayoutとPCのlayoutを分割</h3>
-   <p>https://leeejin.github.io/only_HTML&css/Landing_Page.html</p>
-3. <h3>Bootstrapを使わなく、sassを通じて作り</h3>
-   <p>https://leeejin.github.io/no_bootstrap_only_sass/index.html</p>
-4. <h3>動画見ながら作ったただのsite(animation有り)</h3>
-   <p>https://leeejin.github.io/layout2/layout2.html</p>
-5. <h3>Gridを習ってあれこれ作って見たただのサイト2</h3>
-   <p>https://leeejin.github.io/createlayout/index.html</p>
-6. <h3>stickyを習って今まで習った知識を利用して見た</h3>
-   <p>https://leeejin.github.io/porfolio3/index.html</p>
-7. <h3>3D animation</h3>
-   <p>https://leeejin.github.io/3Danime/index.html</p>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Javascript
-1. <h3>parameter文法で単純なfunctionを作る</h3>
-   <p>https://leeejin.github.io/JS/alert.html</p>
-2. <h3>jqueryについて</h3>
-   <p>https://leeejin.github.io/JS/classList.html</p>
-3. <h3>formについて、データがない場合はデータ転送を中止</h3>
-   <p>https://leeejin.github.io/JS/modal.html</p>
-   <p>https://leeejin.github.io/JS/success.html</p>
-4. <h3>総 4問題のクイズ</h3>
-   <p>https://leeejin.github.io/JS/question.html</p>
-5. <h3>カテゴリー</h3>
-   <p>https://leeejin.github.io/JS/detail.html</p>
-   <p>https://leeejin.github.io/JS/detail2.html</p>
-6. <h3>クイズ2</h3>
-   <p>leeejin.leeejin.github.io/JS/forarray.js </p>
-7. <h3>for,array並べ、買い物かご追加</h3>
-   <p>https://leeejin.github.io/JS/list.html</p>
-   <p>https://leeejin.github.io/JS/list_v2.html</p>
-   <p>https://leeejin.github.io/JS/cart.html</p>
-8. <h3>sticky深化</h3>
-   <p>https://leeejin.github.io/JS/grid.html</p>
-9. <h3></h3>
-   <p> </p>
-10. <h3>웹개발기능대회문제</h3>
-   <p>https://leeejin.github.io/JS/Web/home.html</p>
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
