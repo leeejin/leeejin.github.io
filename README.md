@@ -1,6 +1,6 @@
-# leeejin.github.io
 # 勉強日記✍
-HTML/CSS
+
+## HTML/CSS
 Bootstrapを初めて使って見た
 https://leeejin.github.io/portfolio2/bootstrap2.html
 
@@ -22,7 +22,7 @@ https://leeejin.github.io/porfolio3/index.html
 3D animation
 https://leeejin.github.io/3Danime/index.html
 
-Javascript
+## Javascript
 parameter文法で単純なfunctionを作る
 https://leeejin.github.io/JS/alert.html
 
@@ -57,3 +57,6 @@ https://leeejin.github.io/JS/grid.html
 
 웹개발기능대회문제
 https://leeejin.github.io/Web/home.html
+
+## React
+https://leeejin.github.io/build/index.html
