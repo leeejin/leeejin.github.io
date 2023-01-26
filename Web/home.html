@@ -20,6 +20,7 @@
         }
 
         .cart-box {
+            margin:10px;
             height: 400px;
             background: black;
         }
@@ -45,9 +46,8 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.2);
             position: fixed;
-            visibility: hidden;
+            display: none;
             z-index: 6;
-            opacity: 0;
             padding: 30px;
             transition: all 1s;
         }
@@ -58,11 +58,8 @@
             background: white;
         }
 
-        .show-modal {
-            visibility: visible;
-            opacity: 1;
-        }
 
+    
         @media screen and (max-width:992px) {
             .form-control {
                 width: 100%;
@@ -70,17 +67,18 @@
         }
     </style>
     <div class="black-bg">
-        <div class="white-bg">
+        <div class="container white-bg">
             <h5>성함</h5>
-            <input type="text">
+            <input type="text" id="name">
             <h5>연락처</h5>
-            <input type="text">
+            <input type="text" id="phone">
             <div class="p-3">
-                <button class="btn btn-dark">입력완료</button>
-                <button class="btn btn-dark">닫기</button>
+                <button class="okay btn btn-dark">입력완료</button>
+                <button class="close btn btn-dark">닫기</button>
             </div>
         </div>
     </div>
+    
     <nav class="navbar navbar-expand-lg bg-dark bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="#">집꾸미기</a>
@@ -106,17 +104,18 @@
             <form class="d-flex p-3" role="search">
                 <input class="form-control" type="search" placeholder="검색어 입력">
             </form>
-            <div class="row product-list"></div>
+            <div class="row product-list">
 
-
-            <div class="p-3" style="background:rgb(173, 173, 173)">
-                <h5>장바구니</h5>
-                <div class="d-flex cart-box">
-                    <h5>여기로 드래그</h5>
-                </div>
             </div>
         </div>
 
+
+        <div class="container" style="background:rgb(173, 173, 173);">
+            <h5>장바구니</h5>
+            <div class="row cart-box">
+                <h5>여기로 드래그</h5>
+            </div>
+        </div>
 
         <div class="container">
             <h5>최종가격</h5>
@@ -125,8 +124,7 @@
         </div>
     </div>
 
-
-
+    <canvas id="canvas" width="800" height="350"></canvas>
     <script>
 
         let products = [];
@@ -164,17 +162,21 @@
                     }
                     console.log(carts);
 
+
                     $('.cart-box').html('');
+
                     carts.forEach((a, i) => {
                         $('.cart-box').append(`
-                        <div class="col-sm-3 bg-light p-3">
+                        <div class="col-md-3 bg-light p-3">
                         <img src= "${a.photo}" class="w-100" height="200">
                         <h4>${a.title}</h4>
                         <small>${a.brand}</small>
                         <p>${a.price}</p>
                         <input type="number" value="${a.count}" class="item-count w-100">
                  </div>`);
+                        console.log(a.title);
                     })
+
                     calculate();
 
                     $('.item-count').on('input', function () {
@@ -183,20 +185,61 @@
                 });
 
 
+                $('.item').on('dragstart', function (e) {
+                    e.originalEvent.dataTransfer.setData('id', e.target.dataset.id);
+                });
+                $('.cart-box').on('dragover', function (e) {
+                    e.preventDefault();
+                });
+                $('.cart-box').on('drop', function (e) {
+                    let productid = e.originalEvent.dataTransfer.getData('id');
+                    console.log(productid);
+                    $('.add').eq(productid).click();
+                    // ev.target.appendChild(document.getElementById(productid));
+                });
+
+
+                $('.okay').click(function () {
+                    var name = $('#name').val();
+                    var phone = $('#phone').val();
+                    var title ='';
+                    var brand = '';
+                    var price = 0;
+                    carts.forEach((a, i) => {
+                        title += a.title+' ';
+                        brand += a.brand+' ';
+                        price += parseInt(a.price);
+                    });
+                    $('.black-bg').css('display', 'none');
+
+                    var canvas = document.getElementById('canvas');
+                    var c = canvas.getContext('2d');
+                    c.font = '20px dotum';
+                    c.fillText('영수증', 30, 20);
+                    c.fillText(time(), 30, 50);
+                    c.fillText(`구매자 : ${name}, 연락처 : ${phone}`, 30, 80);
+                    c.fillText(title, 30, 110);
+                    c.fillText(brand, 30, 140);
+                    c.fillText(`가격 : ${price}`, 30, 170);
+                    c.fillText(`수량 : ${calculate()}`, 30, 200);
+                    c.fillText(`합계 : ${$('.final-price').html()}`, 30, 230);
+                });
             });
 
 
 
         function calculate() {
             let finalPrice = 0;
+            var totalCount = 0;
             for (let i = 0; i < $('.item-count').length; i++) {
-                var count = Number($('.item-count').eq(i).val());
-                var price = Number($('.item-count').eq(i).siblings('p').html());
+                var count = parseInt($('.item-count').eq(i).val());
+                var price = parseInt($('.item-count').eq(i).siblings('p').html());
                 finalPrice += price * count;
+                totalCount += count;
             }
             console.log(`총가격 : ${finalPrice}`);
             $('.final-price').html(finalPrice);
-
+            return totalCount;
         }
 
 
@@ -206,19 +249,18 @@
             var search = $('.form-control').val();
 
             var newpro = products.filter((data) => {
-                return data.title.includes(search);
+                return data.title.includes(search) || data.brand.includes(search);
             });
 
             $('.product-list').html('');
             newpro.forEach((a, i) => {
-                $('.product-list').append(`<div class="col-sm-3 bg-light p-3">
-                        <div class="item" data-id="${a.id}">
-                    <img src= "${a.photo}" class="w-100" height="200">
+                $('.product-list').append(`
+                        <div class="col-sm-3 bg-light p-3">
+                        <img src= "${a.photo}" class="w-100" height="200">
                         <h4>${a.title}</h4>
                         <small>${a.brand}</small>
-                        <p>${a.price}</p>
-                        <button type="button" class="btn btn-dark add" data-id="${a.id}">담기</button>
-                    </div>
+                        <p>가격 : ${a.price}</p>
+                        <button class="btn btn-dark add" data-id="${a.id}">담기</button>
                  </div>`);
             });
 
@@ -226,12 +268,33 @@
                 let title = html요소.innerHTML;
                 title = title.replace(search, `<span style="background:yellow">${search}</span>`);
                 console.log(title);
-                data.innerHTML = title;
-            });
+
+                html요소.innerHTML = title;
+            })
 
         });
 
+        $('#buy').click(function () {
+            $('.black-bg').css('display', 'block');
+        });
+        $('.close').click(function () {
+            $('.black-bg').css('display', 'none');
+        });
 
+
+
+
+        function time() {
+            let today = new Date();
+            let year = today.getFullYear(); // 년도
+            let month = today.getMonth() + 1;  // 월
+            let date = today.getDate();  // 날짜
+            let hours = today.getHours(); // 시
+            let minutes = today.getMinutes();  // 분
+            let seconds = today.getSeconds();  // 초
+
+            return `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
+        }
     </script>
 </body>
 
