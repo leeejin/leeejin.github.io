@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/leeejin.github.io/shop/static/css/main.c7d68449.css",
-    "main.js": "/leeejin.github.io/shop/static/js/main.fc870485.js",
+    "main.js": "/leeejin.github.io/shop/static/js/main.33567a63.js",
     "static/js/299.6c218d65.chunk.js": "/leeejin.github.io/shop/static/js/299.6c218d65.chunk.js",
     "static/js/432.15a14427.chunk.js": "/leeejin.github.io/shop/static/js/432.15a14427.chunk.js",
     "static/js/8.27bf02b5.chunk.js": "/leeejin.github.io/shop/static/js/8.27bf02b5.chunk.js",
@@ -9,7 +9,7 @@
     "static/media/bg.png": "/leeejin.github.io/shop/static/media/bg.616f307c169b743ff920.png",
     "index.html": "/leeejin.github.io/shop/index.html",
     "main.c7d68449.css.map": "/leeejin.github.io/shop/static/css/main.c7d68449.css.map",
-    "main.fc870485.js.map": "/leeejin.github.io/shop/static/js/main.fc870485.js.map",
+    "main.33567a63.js.map": "/leeejin.github.io/shop/static/js/main.33567a63.js.map",
     "299.6c218d65.chunk.js.map": "/leeejin.github.io/shop/static/js/299.6c218d65.chunk.js.map",
     "432.15a14427.chunk.js.map": "/leeejin.github.io/shop/static/js/432.15a14427.chunk.js.map",
     "8.27bf02b5.chunk.js.map": "/leeejin.github.io/shop/static/js/8.27bf02b5.chunk.js.map",
@@ -17,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.c7d68449.css",
-    "static/js/main.fc870485.js"
+    "static/js/main.33567a63.js"
   ]
 }
